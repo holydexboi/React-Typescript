@@ -1,18 +1,15 @@
 import { useState } from "react";
 import Like from "./Like";
 function App() {
-  const [fill, setFill] = useState(false);
+  const [pizza, setPizza] = useState({
+    name: 'Spicy Pepperoni',
+    toppings: ['Mushroom']
+  })
 
-  return (
-    <div>
-      <Like
-        fill={fill}
-        onClick={() => {
-          setFill(!fill);
-          console.log("clicked")
-        }}
-      />
-    </div>
-  );
+  const handleClicked = () => {
+    setPizza({...pizza, toppings: [...pizza.toppings, 'cheese']})
+  }
+
+  return <div>Like</div>;
 }
 export default App;
