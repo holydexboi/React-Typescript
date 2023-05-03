@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Like from "./Like";
 function App() {
-  const [pizza, setPizza] = useState({
-    name: 'Spicy Pepperoni',
-    toppings: ['Mushroom']
+  const [cart, setCart] = useState({
+    discount: .1,
+    items: [{id : 1, title: 'Product 1', quatity: 1}, {id : 1, title: 'Product 2', quatity: 1}]
   })
 
   const handleClicked = () => {
-    setPizza({...pizza, toppings: [...pizza.toppings, 'cheese']})
+    setCart({...cart, items: cart.items.map(item => item.id === 1 ? {...item, quatity: 2} : item)})
   }
 
   return <div>Like</div>;
