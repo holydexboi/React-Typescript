@@ -1,15 +1,7 @@
 import { useState } from "react";
-import Like from "./Like";
+import ExpandableText from "./ExpandableText";
 function App() {
-  const [cart, setCart] = useState({
-    discount: .1,
-    items: [{id : 1, title: 'Product 1', quatity: 1}, {id : 1, title: 'Product 2', quatity: 1}]
-  })
 
-  const handleClicked = () => {
-    setCart({...cart, items: cart.items.map(item => item.id === 1 ? {...item, quatity: 2} : item)})
-  }
-
-  return <div>Like</div>;
+  return <div><ExpandableText maxChar={10}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti unde eveniet quo voluptatibus omnis alias, enim voluptatem necessitatibus cumque id aut iste reprehenderit beatae quisquam tenetur officia. Tenetur, autem dignissimos.</ExpandableText></div>;
 }
 export default App;
